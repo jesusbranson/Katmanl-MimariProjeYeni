@@ -1,0 +1,16 @@
+﻿@model EntityLayer.Concrete.Job
+
+@{
+    ViewData["Title"] = "AddJob";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+<h1>Meslek Ekleme İşlemleri</h1>
+@using (Html.BeginForm("AddJob", "Job", FormMethod.Post))
+{
+    @Html.Label("Meslek Adı")
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @required = "" })
+    @Html.ValidationMessageFor(x => x.Name)
+    <br />
+    <button class="btn btn-success">Meslek Ekle</button>
+}
+

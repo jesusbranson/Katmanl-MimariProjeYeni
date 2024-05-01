@@ -1,0 +1,55 @@
+﻿@model KatmanlıMimariProje.Models.SaleProductCustomerViewModel
+
+@{
+    ViewData["Title"] = "SaleProduct";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h1>Ürün Satma İşlemi</h1>
+@using (Html.BeginForm("SaleProduct1", "Sale", FormMethod.Post))
+{
+    <div class="form-group">
+
+        
+        <br />
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Ürün Adı")
+        @Html.DropDownListFor(x => x.ProductID, (List<SelectListItem>)ViewBag.v3, new { @class = "form-control", @required = "required" })
+
+
+
+
+        <br />
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Ürün Fiyat")
+        @Html.TextBoxFor(x => x.Price, new { @class = "form-control", @required = "" })
+
+        <br />
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Ürün Adet")
+        <input type="number" name="Quantity" class="form-control" required />
+        <br />
+    </div>
+    <div class="form-group">
+        @Html.Label("Müşteri Adı")
+        @Html.DropDownListFor(x => x.CustomerID, (List<SelectListItem>)ViewBag.v2, new { @class = "form-control", @required = "" })
+        <br />
+    </div>
+    <div class="form-group">
+        @Html.Label("Satış Tarihi")
+        <input type="datetime" name="SaleDate" class="form-control" required />
+        <br />
+    </div>
+    
+
+    <button class="btn-primary">Ürün Sat</button>
+}
+
+

@@ -1,0 +1,30 @@
+﻿@using EntityLayer.Concrete
+@model List<Customer>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<h1>Müşteriler</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Müşteri Adı,Soyadı</th>
+        <th>Şehir</th>
+        <th>Meslek</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Name</td>
+            <td>@item.City</td>
+            <td>@item.Job.Name</td>
+            <td><a href="@Url.Action("DeleteCustomer","Customer",new { item.ID })" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="@Url.Action("UpdateCustomer","Customer",new { id = item.ID })" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>

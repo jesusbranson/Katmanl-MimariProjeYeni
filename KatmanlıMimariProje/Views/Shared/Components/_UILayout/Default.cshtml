@@ -1,0 +1,15 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model EntityLayer.Concrete.AppUser
+
+@if (Model != null)
+{
+         @Model.UserName
+}
+else
+{
+    <p>Welcome Guest!</p>
+}

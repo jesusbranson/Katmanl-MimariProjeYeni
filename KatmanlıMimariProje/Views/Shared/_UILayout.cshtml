@@ -1,0 +1,117 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@{ await Html.RenderPartialAsync("~/Views/Partials/Partial_Header.cshtml");}
+
+
+
+
+<body>
+
+
+    @{ await Html.RenderPartialAsync("~/Views/Partials/Partial_Navbar.cshtml");}
+
+
+
+
+
+    <div id="layoutSidenav">
+
+
+
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">İşlemler</div>
+                        <a class="nav-link" href="@Url.Action("AddProduct","Product")">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-user-plus"></i></div>
+                            Ürün Ekle
+                        </a>
+                        <a class="nav-link" href="@Url.Action("AddCustomer","Customer")">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-user-plus"></i></div>
+                            Müşteri Ekle
+                        </a>
+                        <a class="nav-link" href="@Url.Action("AddJob","Job")">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-user-plus"></i></div>
+                            Meslek Ekle
+                        </a>
+                        <a class="nav-link" href="@Url.Action("AddCategory","Category")">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-user-plus"></i></div>
+                            Kategori Ekle
+                        </a>
+
+                        <div class="sb-sidenav-menu-heading">Menüler</div>
+
+
+                        <a class="nav-link" href="@Url.Action("Index","Customer")">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-user-tie"></i></div>
+                            Müşteriler
+                        </a>
+                        <a class="nav-link" href="@Url.Action("Index","Sale")">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
+                            Satışlar
+                        </a>
+                        <a class="nav-link" href="@Url.Action("Index","Category")">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
+                            Kategoriler
+                        </a>
+                        <a class="nav-link" href="@Url.Action("Index","Product")">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
+                            Ürünler
+                        </a>
+                        <a class="nav-link" href="@Url.Action("Index","Job")">
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
+                            Meslekler
+                        </a>
+
+                        
+
+                        <div class="sb-sidenav-menu-heading">Kullanıcı İşlemleri</div>
+                        <a class="nav-link" href="@Url.Action("Index","Settings")">
+                            <div class="sb-nav-link-icon"><i class="fa fa-lock"></i></div>
+                            Kullanıcı Bilgileri İşlemleri
+                        </a>
+                        <a class="nav-link" href="@Url.Action("LogOut","Login")">
+                            <div class="sb-nav-link-icon"><i class="fa fa-close"></i></div>
+                            Çıkış Yap
+                        </a>
+
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">
+                        <p>Merhaba, @await Component.InvokeAsync("_UILayout")</p>
+                    </div>
+                    Cengiz Application
+                </div>
+            </nav>
+        </div>
+
+
+
+
+
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4" style="margin-top:40px;">
+                    @RenderBody()
+                </div>
+            </main>
+
+            @{await Html.RenderPartialAsync("~/Views/Partials/Partial_Footer.cshtml");}
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="~/startbootstrap-sb-admin-gh-pages/js/scripts.js"></script>
+
+
+</body>
+</html>

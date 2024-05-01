@@ -1,0 +1,62 @@
+﻿
+<div id="layoutSidenav_nav">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+            <div class="nav">
+                <div class="sb-sidenav-menu-heading">İşlemler</div>
+                <a class="nav-link" href="@Url.Action("AddProduct","Product")">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-user-plus"></i></div>
+                    Ürün Ekle
+                </a>
+                <a class="nav-link" href="@Url.Action("AddCustomer","Customer")">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-user-plus"></i></div>
+                    Müşteri Ekle
+                </a>
+                <a class="nav-link" href="@Url.Action("AddJob","Job")">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-user-plus"></i></div>
+                    Meslek Ekle
+                </a>
+
+
+                <div class="sb-sidenav-menu-heading">Menüler</div>
+
+                <a class="nav-link" href="@Url.Action("Index","Customer")">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-user-tie"></i></div>
+                    Müşteriler
+                </a>
+                <a class="nav-link" href="tables.html">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
+                    Kategoriler
+                </a>
+                <a class="nav-link" href="@Url.Action("Index","Product")">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
+                    Ürünler
+                </a>
+                <a class="nav-link" href="@Url.Action("Index","Job")">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
+                    Meslekler
+                </a>
+
+                <a class="nav-link" href="#">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-circle-info"></i></div>
+                    Yardım
+                </a>
+
+                <div class="sb-sidenav-menu-heading">Kullanıcı İşlemleri</div>
+                <a class="nav-link" href="@Url.Action("Index","Settings")">
+                    <div class="sb-nav-link-icon"><i class="fa fa-lock"></i></div>
+                    Kullanıcı Bilgileri İşlemleri
+                </a>
+                <a class="nav-link" href="@Url.Action("LogOut","Login")">
+                    <div class="sb-nav-link-icon"><i class="fa fa-close"></i></div>
+                    Çıkış Yap
+                </a>
+
+            </div>
+        </div>
+        <div class="sb-sidenav-footer">
+            <div class="small">Merhaba @ViewData["tempdata"]</div>
+            Start Bootstrap
+        </div>
+    </nav>
+</div>

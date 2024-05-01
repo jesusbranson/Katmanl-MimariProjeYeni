@@ -1,0 +1,29 @@
+﻿@model KatmanlıMimariProje.Models.UserEditViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<h1>Kullanıcı İşlemleri</h1>
+
+<form method="post">
+    @Html.Label("Ad")
+    <input type="text" asp-for="Name" class="form-control" />
+    <br />
+    @Html.Label("Soyad")
+    <input type="text" asp-for="SurName" class="form-control" />
+    <br />
+    @Html.Label("Email")
+    <input type="text" asp-for="Email" class="form-control" />
+    <br />
+    @Html.Label("Şifre")
+    <input type="text" asp-for="Password" class="form-control" />
+    <br />
+    @Html.Label("Şifre Tekrar")
+    <input type="text" asp-for="ConfirmPassword" class="form-control" />
+    <br />
+    <button class="btn btn-warning">Değişiklikleri Kaydet</button>
+</form>
+
+

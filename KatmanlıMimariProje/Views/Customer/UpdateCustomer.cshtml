@@ -1,0 +1,28 @@
+﻿@model EntityLayer.Concrete.Customer
+
+@{
+    ViewData["Title"] = "UpdateCustomer";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+<h1>Müşteri Güncelleme İşlemleri</h1>
+@using (Html.BeginForm("UpdateCustomer", "Customer", FormMethod.Post))
+{
+
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @required = "", type = "hidden" })
+    @Html.ValidationMessageFor(x => x.ID)
+    <br />
+    @Html.Label("Müşteri Adı Ve Soyadı")
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @required = "" })
+    @Html.ValidationMessageFor(x => x.Name)
+    <br />
+    @Html.Label("Müşteri Şehir")
+    @Html.TextBoxFor(x => x.City, new { @class = "form-control", @required = "" })
+    @Html.ValidationMessageFor(x => x.City)
+    <br />
+    @Html.Label("Müşteri Meslek")
+    @Html.DropDownListFor(x => x.JobID, (List<SelectListItem>)ViewBag.v1, new { @class = "form-control", @required = "" })
+    @Html.ValidationMessageFor(x => x.JobID)
+    <br />
+    <button class="btn-primary">Müşteri Güncelle</button>
+}
+
